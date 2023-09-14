@@ -33,11 +33,23 @@ useEffect(() => {
 
 
   return (
-      <div>
-        {loading ? (<Loading/>):(<Courses courses={courses} removeCourse={deleteCourse}/>)}
+      <div className='App'>
+        {loading ? (
+          <Loading/>
+        ) : (
+        <>
+          {courses.length === 0 ? (
+          <div className='refreshDiv'>
+            <h2>You have deleted all of the courses!</h2>
+            <button className="cardDeleteBtn" onClick={()=>{fetchCourses()}}>Refresh</button>
+          </div>
+        ) : (<Courses courses={courses} removeCourse={deleteCourse}/>
+        )}
+        </>
+        )}
         <Courses courses={courses}/>
       </div>
-  )
+  );
 }
 
 export default App;

@@ -6,7 +6,7 @@ function Courses({courses, removeCourse}) {
         <div>
             <h2>My Courses</h2>
         </div>
-        <div className="">
+        <div className="cardDiv">
             {
                 courses.map((course)=>{
                     return (
